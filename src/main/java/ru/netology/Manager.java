@@ -1,29 +1,34 @@
 package ru.netology;
 
-import ru.netology.Films;
-
 public class Manager {
-    private Films[] films = new Films[0];
+    private Film[] films = new Film[0];
+    private int limit = 10;
 
-    public void add(Films film) {
+    public Manager(int limit) {
+        this.limit = limit;
+    }
+
+    public Manager() {
+    }
+
+    public void add(Film film) {
         int length = films.length + 1;
-        Films[] tmp = new Films[length];
+        Film[] tmp = new Film[length];
         System.arraycopy(films, 0, tmp, 0, films.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = film;
         films = tmp;
     }
 
-    private int limit = 10;
 
-    public Films[] getAll() {
+    public Film[] getAll() {
         int resultLength;
         if (films.length > limit) {
             resultLength = limit;
         } else {
             resultLength = films.length;
         }
-        Films[] result = new Films[resultLength];
+        Film[] result = new Film[resultLength];
 
         for (int i = 0; i < resultLength; i++) {
 

@@ -1,6 +1,5 @@
 package ru.netology;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,11 +9,11 @@ public class TestManager {
     @Test
     void testManager() {
         Manager man = new Manager();
-        Films film1 = new Films(1, "http//1", "Stop", "Horror");
-        Films film2 = new Films(2, "http//2", "Evil", "Horror");
-        Films film3 = new Films(3, "http//3", "Hostel", "Horror");
-        Films film4 = new Films(4, "http//4", "Trol", "Cartoon");
-        Films film5 = new Films(5, "http//5", "Number 1", "Comedy");
+        Film film1 = new Film(1, "http//1", "Stop", "Horror");
+        Film film2 = new Film(2, "http//2", "Evil", "Horror");
+        Film film3 = new Film(3, "http//3", "Hostel", "Horror");
+        Film film4 = new Film(4, "http//4", "Trol", "Cartoon");
+        Film film5 = new Film(5, "http//5", "Number 1", "Comedy");
 
         man.add(film1);
         man.add(film2);
@@ -23,8 +22,8 @@ public class TestManager {
         man.add(film5);
 
 
-        Films[] actual = man.getAll();
-        Films[] expected = new Films[]{film5, film4, film3, film2, film1};
+        Film[] actual = man.getAll();
+        Film[] expected = new Film[]{film5, film4, film3, film2, film1};
 
         assertArrayEquals(expected, actual);
 
@@ -33,18 +32,18 @@ public class TestManager {
 
     @Test
     void testManagerMax() {
-        Manager man = new Manager();
-        Films film1 = new Films(1, "http//1", "Stop", "Horror");
-        Films film2 = new Films(2, "http//2", "Evil", "Horror");
-        Films film3 = new Films(3, "http//3", "Hostel", "Horror");
-        Films film4 = new Films(4, "http//4", "Trol", "Cartoon");
-        Films film5 = new Films(5, "http//5", "Number 1", "Comedy");
-        Films film6 = new Films(6, "http//6", "Number 2", "Comedy");
-        Films film7 = new Films(7, "http//7", "Number 3", "Comedy");
-        Films film8 = new Films(8, "http//8", "Number 4", "Comedy");
-        Films film9 = new Films(9, "http//9", "Number 5", "Comedy");
-        Films film10 = new Films(10, "http//10", "Number 6", "Comedy");
-        Films film11 = new Films(11, "http//11", "Number 7", "Comedy");
+        Manager man = new Manager(10);
+        Film film1 = new Film(1, "http//1", "Stop", "Horror");
+        Film film2 = new Film(2, "http//2", "Evil", "Horror");
+        Film film3 = new Film(3, "http//3", "Hostel", "Horror");
+        Film film4 = new Film(4, "http//4", "Trol", "Cartoon");
+        Film film5 = new Film(5, "http//5", "Number 1", "Comedy");
+        Film film6 = new Film(6, "http//6", "Number 2", "Comedy");
+        Film film7 = new Film(7, "http//7", "Number 3", "Comedy");
+        Film film8 = new Film(8, "http//8", "Number 4", "Comedy");
+        Film film9 = new Film(9, "http//9", "Number 5", "Comedy");
+        Film film10 = new Film(10, "http//10", "Number 6", "Comedy");
+        Film film11 = new Film(11, "http//11", "Number 7", "Comedy");
 
         man.add(film1);
         man.add(film2);
@@ -59,8 +58,8 @@ public class TestManager {
         man.add(film11);
 
 
-        Films[] actual = man.getAll();
-        Films[] expected = new Films[]{film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
+        Film[] actual = man.getAll();
+        Film[] expected = new Film[]{film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
 
         assertArrayEquals(expected, actual);
 
