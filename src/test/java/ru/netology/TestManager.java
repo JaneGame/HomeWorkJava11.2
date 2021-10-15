@@ -45,7 +45,6 @@ public class TestManager {
         doReturn(returned).when(repo).findAll();
 
 
-
         Film[] actual = man.getAll();
         Film[] expected = new Film[]{film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
 

@@ -2,7 +2,9 @@ package ru.netology;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.mockito.Mockito;
 
 public class TestRepository {
@@ -24,7 +26,7 @@ public class TestRepository {
     }
 
     @Test
-    void removeByIdTest(){
+    void removeByIdTest() {
 
         repo.removeById(1);
 
@@ -36,7 +38,7 @@ public class TestRepository {
     }
 
     @Test
-    void findByIdTest(){
+    void findByIdTest() {
         Film actual = repo.findById(1);
         Film expected = film1;
 
@@ -44,7 +46,7 @@ public class TestRepository {
     }
 
     @Test
-    void findByNoIdTest(){
+    void findByNoIdTest() {
         Film actual = repo.findById(6);
         Film expected = null;
 
@@ -52,7 +54,7 @@ public class TestRepository {
     }
 
     @Test
-    void removeAllTest(){
+    void removeAllTest() {
         Film[] actual = repo.removeAll();
         Film[] expected = {};
 
