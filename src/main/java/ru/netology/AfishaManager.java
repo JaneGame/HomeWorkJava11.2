@@ -1,27 +1,22 @@
+
 package ru.netology;
 
-public class Manager {
-    private Film[] films = new Film[0];
+public class AfishaManager {
+    private AfishaRepository repo;
+
+    public AfishaManager(AfishaRepository repo) {
+        this.repo = repo;
+    }
+
     private int limit = 10;
 
-    public Manager(int limit) {
-        this.limit = limit;
-    }
-
-    public Manager() {
-    }
-
     public void add(Film film) {
-        int length = films.length + 1;
-        Film[] tmp = new Film[length];
-        System.arraycopy(films, 0, tmp, 0, films.length);
-        int lastIndex = tmp.length - 1;
-        tmp[lastIndex] = film;
-        films = tmp;
+        repo.save(film);
     }
 
 
     public Film[] getAll() {
+        Film[] films = repo.findAll();
         int resultLength;
         if (films.length > limit) {
             resultLength = limit;
@@ -39,8 +34,5 @@ public class Manager {
         }
         return result;
     }
+
 }
-
-
-
-
