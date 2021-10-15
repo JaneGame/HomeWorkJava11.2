@@ -14,4 +14,22 @@ public class Film {
         this.genre = genre;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+
+
 }
